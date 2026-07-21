@@ -3,11 +3,8 @@
 import { useEffect, useRef } from "react";
 
 /**
- * Scroll-triggered reveal wrapper.
- * type: wipe | slide-x | slide-x-right | line-draw | scale-tight | clip-circle | line-mask
- *
- * Uses a rAF-throttled scroll/resize check (robust) instead of IntersectionObserver,
- * which proved flaky for tall / clipped elements.
+ * Scroll-triggered reveal.
+ * type: wipe | slide-x | slide-x-right | line-mask
  */
 export default function RevealOnView({
   as: Tag = "div",

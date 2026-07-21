@@ -16,7 +16,7 @@ export default function Hero() {
       </div>
 
       <div className="block-hero_content">
-        <p className="block-hero_eyebrow">Nova Topola · od 1971</p>
+        <p className="block-hero_eyebrow">Nova Topola · od 1974</p>
         <h1 className="block-hero_title">
           <span className="block-hero_title-main">Pod fenjerom</span>
         </h1>

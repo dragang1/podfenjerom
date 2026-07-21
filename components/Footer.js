@@ -59,7 +59,7 @@ export default function Footer() {
           />
           <div>
             <p className="site-footer_name">{site.name}</p>
-            <p className="site-footer_tag">Restoran · Nova Topola · od 1971</p>
+            <p className="site-footer_tag">Restoran · Nova Topola · od 1974</p>
           </div>
         </div>
 

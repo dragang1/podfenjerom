@@ -12,12 +12,12 @@ export default function History() {
           sizes="(max-width: 900px) 100vw, 50vw"
           className="block-history_img"
         />
-        <span className="block-photo_code">PF · NT · 1971</span>
+        <span className="block-photo_code">PF · NT · 1974</span>
       </RevealOnView>
 
       <div className="block-history_copy">
         <RevealOnView type="slide-x-right">
-          <p className="block-kicker">Istorija · 1971—danas</p>
+          <p className="block-kicker">Istorija · 1974—danas</p>
           <h2>
             Kuća koja se <em>nasljeđuje</em>
           </h2>

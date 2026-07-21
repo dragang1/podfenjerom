@@ -5,7 +5,7 @@ export default function Menu() {
     <section className="block-menu" id="meni">
       <div className="block-menu_inner">
         <header className="block-menu_head">
-          <p className="block-menu_kicker">Od 1971</p>
+          <p className="block-menu_kicker">Od 1974</p>
           <h2 className="block-menu_title">Jelovnik</h2>
           <span className="block-menu_rule" aria-hidden="true" />
         </header>
@@ -14,6 +14,9 @@ export default function Menu() {
           {site.menu.map((category) => (
             <div key={category.title} className="block-menu_chapter">
               <h3>{category.title}</h3>
+              {category.note ? (
+                <p className="block-menu_note">{category.note}</p>
+              ) : null}
               <ul>
                 {category.items.map((item) => (
                   <li key={item.name} className="block-menu_row">

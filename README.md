@@ -18,14 +18,12 @@ npm run build
 npm start
 ```
 
-## Deploy (Vercel)
+## SEO / dijeljenje
 
-1. Push na GitHub
-2. Import projekta na [vercel.com](https://vercel.com/new)
-3. Framework: Next.js — build i output ostaju default
+U Vercel Environment Variables postavi:
 
-Ili CLI:
-
-```bash
-npx vercel
 ```
+NEXT_PUBLIC_SITE_URL=https://tvoj-domen.com
+```
+
+Bez toga koristi se fallback `https://podfenjerom.vercel.app`.

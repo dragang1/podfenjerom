@@ -121,15 +121,14 @@ html.has-dom-ready .site-header {
   gap: 0.1rem;
   padding: 0.4rem 5vw 0.55rem;
   padding-top: calc(0.4rem + env(safe-area-inset-top, 0px));
-  background: rgba(42, 31, 26, 0.92);
-  backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(184, 146, 74, 0.28);
+  background: var(--lf-night);
+  border-bottom: 1px solid rgba(184, 146, 74, 0.32);
   transition: background 0.35s ease, border-color 0.35s ease;
 }
 
 .site-header.is-scrolled .header-bar {
-  background: rgba(22, 18, 16, 0.96);
-  border-bottom-color: rgba(184, 146, 74, 0.38);
+  background: var(--lf-soot);
+  border-bottom-color: rgba(184, 146, 74, 0.42);
 }
 
 .header-brand-row {
@@ -160,7 +159,7 @@ html.has-dom-ready .site-header {
   width: 7rem;
   height: 7rem;
   object-fit: contain;
-  filter: brightness(0) invert(1) sepia(0.12) saturate(0.6);
+  filter: brightness(0) invert(1) sepia(0.32) saturate(0.5) hue-rotate(6deg);
 }
 
 .nav-desktop {
@@ -183,8 +182,9 @@ html.has-dom-ready .site-header {
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(242, 235, 226, 0.72);
-  transition: color 0.25s ease;
+  color: var(--lf-linen);
+  opacity: 0.78;
+  transition: color 0.25s ease, opacity 0.25s ease;
 }
 
 .nav-desktop ul li a::after {
@@ -202,6 +202,7 @@ html.has-dom-ready .site-header {
 
 .nav-desktop ul li a:hover {
   color: var(--lf-flame-soft);
+  opacity: 1;
 }
 
 .nav-desktop ul li a:hover::after {
@@ -228,9 +229,13 @@ html.has-dom-ready .site-header {
 .menu-toggle-icon::after {
   display: block;
   width: 20px;
-  height: 1px;
-  background: var(--lf-linen);
-  transition: transform 0.3s ease, opacity 0.3s ease, top 0.3s ease;
+  height: 1.5px;
+  background: var(--lf-flame-soft);
+  transition:
+    transform 0.3s var(--ease-standard),
+    opacity 0.3s ease,
+    top 0.3s var(--ease-standard),
+    background 0.25s ease;
 }
 
 .menu-toggle-icon {
@@ -260,11 +265,13 @@ html.has-dom-ready .site-header {
 .menu-toggle-icon.open::before {
   top: 0;
   transform: rotate(45deg);
+  background: var(--lf-flame);
 }
 
 .menu-toggle-icon.open::after {
   top: 0;
   transform: rotate(-45deg);
+  background: var(--lf-flame);
 }
 
 .nav-backdrop {
@@ -324,7 +331,7 @@ html.has-dom-ready .site-header {
 
   .site-header.is-open .header-bar {
     background: var(--lf-night);
-    border-bottom-color: rgba(184, 146, 74, 0.28);
+    border-bottom-color: rgba(184, 146, 74, 0.32);
   }
 
   .nav-mobile {
@@ -438,7 +445,7 @@ html.has-dom-ready .c-loading {
   width: 100%;
   height: auto;
   object-fit: contain;
-  filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1) sepia(0.32) saturate(0.5) hue-rotate(6deg);
 }
 
 @keyframes lantern-pulse {
@@ -1077,7 +1084,7 @@ html.has-dom-ready .block-hero_title::after {
   height: 3.75rem;
   object-fit: contain;
   flex-shrink: 0;
-  filter: brightness(0) invert(1) sepia(0.12) saturate(0.6);
+  filter: brightness(0) invert(1) sepia(0.32) saturate(0.5) hue-rotate(6deg);
 }
 
 .site-footer_name {

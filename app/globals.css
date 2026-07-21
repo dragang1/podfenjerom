@@ -1,17 +1,17 @@
 :root {
   /*
-   * Topli lantern luxury — orah, bone, tiha mjed
+   * Tradicija / stari restoran — orah, mjed, bjelokost, vino
    */
-  --lf-soot: #120f0d;
-  --lf-night: #1f1915;
-  --lf-dusk: #322820;
-  --lf-linen: #f4f1eb;
-  --lf-plaster: #e8e4db;
-  --lf-mist: #8f877c;
-  --lf-flame: #b08950;
-  --lf-flame-soft: #c9a86a;
-  --lf-ember: #6b342e;
-  --lf-ink: #161310;
+  --lf-soot: #161210;
+  --lf-night: #2a1f1a;
+  --lf-dusk: #3a2c24;
+  --lf-linen: #f2ebe2;
+  --lf-plaster: #ebe3d6;
+  --lf-mist: #9a8f82;
+  --lf-flame: #b8924a;
+  --lf-flame-soft: #d4b36a;
+  --lf-ember: #6b322c;
+  --lf-ink: #1a1512;
   --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-curtain: cubic-bezier(0.65, 0, 0.35, 1);
 }
@@ -121,15 +121,15 @@ html.has-dom-ready .site-header {
   gap: 0.1rem;
   padding: 0.4rem 5vw 0.55rem;
   padding-top: calc(0.4rem + env(safe-area-inset-top, 0px));
-  background: rgba(31, 25, 21, 0.92);
+  background: rgba(42, 31, 26, 0.92);
   backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(176, 137, 80, 0.28);
+  border-bottom: 1px solid rgba(184, 146, 74, 0.28);
   transition: background 0.35s ease, border-color 0.35s ease;
 }
 
 .site-header.is-scrolled .header-bar {
-  background: rgba(18, 15, 13, 0.96);
-  border-bottom-color: rgba(176, 137, 80, 0.38);
+  background: rgba(22, 18, 16, 0.96);
+  border-bottom-color: rgba(184, 146, 74, 0.38);
 }
 
 .header-brand-row {
@@ -183,7 +183,7 @@ html.has-dom-ready .site-header {
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(244, 241, 235, 0.72);
+  color: rgba(242, 235, 226, 0.72);
   transition: color 0.25s ease;
 }
 
@@ -309,7 +309,7 @@ html.has-dom-ready .site-header {
     position: fixed;
     inset: 0;
     z-index: 998;
-    background: rgba(18, 15, 13, 0.58);
+    background: rgba(22, 18, 16, 0.72);
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -322,13 +322,20 @@ html.has-dom-ready .site-header {
     pointer-events: auto;
   }
 
+  .site-header.is-open .header-bar {
+    background: var(--lf-night);
+    border-bottom-color: rgba(184, 146, 74, 0.28);
+  }
+
   .nav-mobile {
     display: grid;
     grid-template-rows: 0fr;
     width: 100%;
     background: var(--lf-night);
-    border-top: none;
-    transition: grid-template-rows 0.4s var(--ease-standard);
+    border-top: 1px solid transparent;
+    transition:
+      grid-template-rows 0.4s var(--ease-standard),
+      border-color 0.25s ease;
     pointer-events: none;
     visibility: hidden;
   }
@@ -340,6 +347,7 @@ html.has-dom-ready .site-header {
 
   .nav-mobile.open {
     grid-template-rows: 1fr;
+    border-top-color: rgba(184, 146, 74, 0.22);
     pointer-events: auto;
     visibility: visible;
   }
@@ -369,7 +377,7 @@ html.has-dom-ready .site-header {
     font-weight: 500;
     font-style: italic;
     letter-spacing: -0.02em;
-    color: rgba(244, 241, 235, 0.88);
+    color: var(--lf-linen);
     border: none;
     text-align: center;
     transition: color 0.25s ease;
@@ -388,12 +396,12 @@ html.has-dom-ready .site-header {
     font-weight: 500;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: rgba(244, 241, 235, 0.5);
+    color: rgba(242, 235, 226, 0.55);
   }
 
   .nav-mobile ul li:last-child a:hover,
   .nav-mobile ul li:last-child a:active {
-    color: var(--lf-flame-soft);
+    color: var(--lf-flame);
   }
 }
 
@@ -476,14 +484,14 @@ html.has-dom-ready .c-loading {
   background:
     radial-gradient(
       ellipse 75% 70% at 50% 45%,
-      rgba(31, 25, 21, 0.28) 0%,
-      rgba(18, 15, 13, 0.78) 100%
+      rgba(42, 31, 26, 0.28) 0%,
+      rgba(22, 18, 16, 0.78) 100%
     ),
     linear-gradient(
       180deg,
-      rgba(18, 15, 13, 0.55) 0%,
+      rgba(22, 18, 16, 0.55) 0%,
       transparent 38%,
-      rgba(18, 15, 13, 0.62) 100%
+      rgba(22, 18, 16, 0.62) 100%
     );
   pointer-events: none;
 }
@@ -559,7 +567,7 @@ html.has-dom-ready .block-hero_title::after {
   font-style: italic;
   font-weight: 400;
   line-height: 1.4;
-  color: rgba(244, 241, 235, 0.78);
+  color: rgba(242, 235, 226, 0.78);
 }
 
 .block-hero_actions {
@@ -590,7 +598,7 @@ html.has-dom-ready .block-hero_title::after {
 }
 
 .block-hero_cta--ghost {
-  border-bottom-color: rgba(244, 241, 235, 0.3);
+  border-bottom-color: rgba(242, 235, 226, 0.3);
   font-weight: 500;
   opacity: 0.85;
 }
@@ -673,7 +681,7 @@ html.has-dom-ready .block-hero_title::after {
 .block-history_columns p {
   font-size: 0.96rem;
   line-height: 1.7;
-  color: rgba(244, 241, 235, 0.76);
+  color: rgba(242, 235, 226, 0.76);
 }
 
 .block-history_oath {
@@ -712,8 +720,8 @@ html.has-dom-ready .block-hero_title::after {
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(100deg, rgba(18, 15, 13, 0.82) 0%, transparent 58%),
-    linear-gradient(0deg, rgba(18, 15, 13, 0.58), transparent 48%);
+    linear-gradient(100deg, rgba(22, 18, 16, 0.82) 0%, transparent 58%),
+    linear-gradient(0deg, rgba(22, 18, 16, 0.58), transparent 48%);
   pointer-events: none;
 }
 
@@ -728,7 +736,7 @@ html.has-dom-ready .block-hero_title::after {
   max-width: 26rem;
   font-size: 0.98rem;
   line-height: 1.65;
-  color: rgba(244, 241, 235, 0.8);
+  color: rgba(242, 235, 226, 0.8);
 }
 
 .block-specialty_plate {
@@ -818,7 +826,7 @@ html.has-dom-ready .block-hero_title::after {
   color: var(--lf-dusk);
   margin-bottom: 0.65rem;
   padding-bottom: 0.35rem;
-  border-bottom: 1px solid rgba(31, 25, 21, 0.18);
+  border-bottom: 1px solid rgba(42, 31, 26, 0.18);
 }
 
 .block-menu_chapter:has(.block-menu_note) h3 {
@@ -830,10 +838,10 @@ html.has-dom-ready .block-hero_title::after {
 .block-menu_note {
   margin: 0 0 0.65rem;
   padding-bottom: 0.35rem;
-  border-bottom: 1px solid rgba(31, 25, 21, 0.18);
+  border-bottom: 1px solid rgba(42, 31, 26, 0.18);
   font-size: 0.8rem;
   font-style: italic;
-  color: rgba(22, 19, 16, 0.55);
+  color: rgba(26, 21, 18, 0.55);
 }
 
 .block-menu_row {
@@ -843,7 +851,7 @@ html.has-dom-ready .block-hero_title::after {
   gap: 0.75rem 1rem;
   padding: 0.4rem 0;
   font-size: 0.98rem;
-  border-bottom: 1px solid rgba(22, 19, 16, 0.08);
+  border-bottom: 1px solid rgba(26, 21, 18, 0.08);
 }
 
 .block-menu_name {
@@ -1003,7 +1011,7 @@ html.has-dom-ready .block-hero_title::after {
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
   grid-template-rows: 1fr auto;
   background: var(--lf-night);
-  color: rgba(244, 241, 235, 0.72);
+  color: rgba(242, 235, 226, 0.72);
   font-size: 0.9rem;
   line-height: 1.55;
 }
@@ -1084,7 +1092,7 @@ html.has-dom-ready .block-hero_title::after {
 .site-footer_tag {
   margin-top: 0.3rem;
   font-size: 0.78rem;
-  color: rgba(244, 241, 235, 0.5);
+  color: rgba(242, 235, 226, 0.5);
 }
 
 .site-footer_grid {
@@ -1111,7 +1119,7 @@ html.has-dom-ready .block-hero_title::after {
   color: var(--lf-linen);
   text-decoration: underline;
   text-underline-offset: 0.2em;
-  text-decoration-color: rgba(176, 137, 80, 0.4);
+  text-decoration-color: rgba(184, 146, 74, 0.4);
 }
 
 .site-footer a:hover {
@@ -1128,7 +1136,7 @@ html.has-dom-ready .block-hero_title::after {
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: rgba(244, 241, 235, 0.55);
+  color: rgba(242, 235, 226, 0.55);
   text-decoration: none;
   border: 0;
   padding: 0;
@@ -1152,9 +1160,9 @@ html.has-dom-ready .block-hero_title::after {
   grid-column: 1 / -1;
   margin: 0;
   padding: 0.85rem clamp(1.5rem, 4vw, 3rem);
-  border-top: 1px solid rgba(244, 241, 235, 0.08);
+  border-top: 1px solid rgba(242, 235, 226, 0.08);
   font-size: 0.72rem;
-  color: rgba(244, 241, 235, 0.38);
+  color: rgba(242, 235, 226, 0.38);
   text-align: center;
   background: var(--lf-soot);
 }
@@ -1245,7 +1253,7 @@ html.has-dom-ready .block-hero_title::after {
     align-self: flex-start;
     margin-top: 0.25rem;
     font-size: 0.68rem;
-    color: rgba(244, 241, 235, 0.45);
+    color: rgba(242, 235, 226, 0.45);
   }
 
   .site-footer_map {
@@ -1279,8 +1287,8 @@ html.has-dom-ready .block-hero_title::after {
 
   .block-specialty_stage::after {
     background:
-      linear-gradient(0deg, rgba(18, 15, 13, 0.82), rgba(18, 15, 13, 0.12)),
-      linear-gradient(90deg, rgba(18, 15, 13, 0.45), transparent);
+      linear-gradient(0deg, rgba(22, 18, 16, 0.82), rgba(22, 18, 16, 0.12)),
+      linear-gradient(90deg, rgba(22, 18, 16, 0.45), transparent);
   }
 
   .block-specialty_plate {

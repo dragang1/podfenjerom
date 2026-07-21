@@ -91,9 +91,21 @@ export default function Footer() {
         </a>
       </div>
 
-      <p className="site-footer_copy">
-        © {year} {site.name}
-      </p>
+      <div className="site-footer_copy">
+        <p>
+          © {year} {site.name}
+        </p>
+        <p className="site-footer_credit">
+          Web dizajn{" "}
+          <a
+            href="https://www.novawebstudio.co/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Nova Web Studio
+          </a>
+        </p>
+      </div>
     </footer>
   );
 }

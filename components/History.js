@@ -30,8 +30,9 @@ export default function History() {
           </RevealOnView>
           <RevealOnView type="slide-x-right" delay={140}>
             <p>
-              Danas restoran vode njihov sin Predrag i supruga Divna. Promijenile
-              su se godine, ali ne i pravilo: gost se dočekuje kao na slavu.
+              Danas restoran vode njihov sin Predrag i supruga Divna.
+              Promijenile su se godine, ali ne i pravilo gost se dočekuje kao na
+              slavu.
             </p>
           </RevealOnView>
         </div>
@@ -42,7 +43,7 @@ export default function History() {
           delay={180}
           as="p"
         >
-          Niko odavde nije izašao gladan.
+          Tradicija i kvalitet su naša glavna vrijednost.
         </RevealOnView>
       </div>
     </section>

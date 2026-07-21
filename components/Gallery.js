@@ -13,7 +13,6 @@ export default function Gallery() {
             <em>Kako jeste.</em>
           </h2>
         </div>
-        <span>Nova Topola</span>
       </div>
 
       <div className="block-gallery_grid">

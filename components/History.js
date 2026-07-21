@@ -12,20 +12,16 @@ export default function History() {
           sizes="(max-width: 900px) 100vw, 50vw"
           className="block-history_img"
         />
-        <span className="block-photo_code">PF · NT · 1974</span>
       </RevealOnView>
 
       <div className="block-history_copy">
         <RevealOnView type="slide-x-right">
-          <p className="block-kicker">Istorija · 1974—danas</p>
-          <h2>
-            Kuća koja se <em>nasljeđuje</em>
-          </h2>
+          <p className="block-kicker">1974—danas</p>
+          <h2>Tradicija</h2>
         </RevealOnView>
 
         <div className="block-history_columns">
           <RevealOnView type="slide-x" delay={80}>
-            <span>prvo poglavlje</span>
             <p>
               Smilja i Vukašin Stanišljević otvorili su restoran 1971. godine.
               Mali porodični posao u Novoj Topoli ubrzo je postao mjesto zbog
@@ -33,10 +29,9 @@ export default function History() {
             </p>
           </RevealOnView>
           <RevealOnView type="slide-x-right" delay={140}>
-            <span>danas</span>
             <p>
-              Kuću vode njihov sin Predrag i supruga Divna. Promijenile su se
-              godine, ali ne i pravilo: gost se dočekuje kao na slavu.
+              Danas restoran vode njihov sin Predrag i supruga Divna. Promijenile
+              su se godine, ali ne i pravilo: gost se dočekuje kao na slavu.
             </p>
           </RevealOnView>
         </div>

@@ -7,7 +7,7 @@ import { site } from "@/data/site";
 
 const NAV_LINKS = [
   { href: "#meni", label: "Jelovnik" },
-  { href: "#istorija", label: "Istorija" },
+  { href: "#istorija", label: "Tradicija" },
   { href: "#lokacija", label: "Lokacija" },
   {
     href: site.instagram,

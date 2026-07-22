@@ -7,6 +7,39 @@ export const site = {
     "https://maps.google.com/maps?q=45.0548117,17.3084218&z=16&hl=sr&output=embed",
   mapLink: "https://www.google.com/maps?cid=13201239050278637299",
   instagram: "https://www.instagram.com/pod_fenjerom/",
+  googleReviewUrl:
+    "https://search.google.com/local/writereview?placeid=ChIJ0a4sJt73XUcR847fGvk4NLc",
+  logo: "/fenjerlogo.png",
+  welcome: {
+    headline: "Dobro došli u Pod Fenjerom",
+    locationLine: "Nova Topola · Gradiška",
+    actions: [
+      {
+        id: "menu",
+        label: "🍽 Pogledajte jelovnik",
+        href: "/#meni",
+        external: false,
+      },
+      {
+        id: "review",
+        label: "⭐ Ostavite Google recenziju",
+        hrefKey: "googleReviewUrl",
+        external: true,
+      },
+      {
+        id: "instagram",
+        label: "📸 Zapratite nas na Instagramu",
+        hrefKey: "instagram",
+        external: true,
+      },
+      {
+        id: "site",
+        label: "🌐 Posjetite naš sajt",
+        href: "/",
+        external: false,
+      },
+    ],
+  },
   gallery: [
     { src: "/razanj.webp", alt: "Jagnjetina na ražnju nad vatrom" },
     { src: "/jagnjetina.png", alt: "Jagnjetina servirana na stolu" },

@@ -1190,6 +1190,126 @@ html.has-dom-ready .block-hero_title::after {
   text-decoration-color: var(--lf-flame);
 }
 
+/* ---------- WELCOME / NFC ---------- */
+.welcome {
+  min-height: 100svh;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 1.75rem 1.25rem calc(1.75rem + env(safe-area-inset-bottom, 0px));
+  background:
+    radial-gradient(
+      ellipse 90% 70% at 50% 0%,
+      rgba(58, 44, 36, 0.55) 0%,
+      transparent 58%
+    ),
+    var(--lf-soot);
+  color: var(--lf-linen);
+}
+
+.welcome_inner {
+  width: min(100%, 26rem);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.welcome_brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.45rem;
+  opacity: 0;
+  transform: translateY(0.75rem);
+  animation: welcome-in 0.7s var(--ease-standard) 0.05s forwards;
+}
+
+.welcome_logo {
+  width: 6.5rem;
+  height: 6.5rem;
+  object-fit: contain;
+  margin-bottom: 0.55rem;
+  filter: brightness(0) invert(1) sepia(0.32) saturate(0.5) hue-rotate(6deg);
+}
+
+.welcome_name {
+  margin: 0;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1.85rem, 7vw, 2.25rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--lf-linen);
+}
+
+.welcome_location {
+  margin: 0;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--lf-flame-soft);
+}
+
+.welcome_headline {
+  margin: 0.85rem 0 0;
+  max-width: 18rem;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1.2rem, 4.5vw, 1.4rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: rgba(242, 235, 226, 0.82);
+}
+
+.welcome_actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.welcome_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.25rem;
+  padding: 0.9rem 1.15rem;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 0.98rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: var(--lf-linen);
+  background: var(--lf-night);
+  border: 1px solid rgba(184, 146, 74, 0.38);
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(0.6rem);
+  animation: welcome-in 0.65s var(--ease-standard) var(--welcome-delay, 0ms)
+    forwards;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.welcome_btn:hover,
+.welcome_btn:active {
+  background: var(--lf-dusk);
+  border-color: var(--lf-flame);
+  color: var(--lf-flame-soft);
+}
+
+@keyframes welcome-in {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 #meni,
 #istorija,
 #specijalitet,
@@ -1436,5 +1556,13 @@ html.has-dom-ready .block-hero_title::after {
     opacity: 1;
     transform: none;
     clip-path: none;
+  }
+
+  .welcome_brand,
+  .welcome_btn {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
   }
 }

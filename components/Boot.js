@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 import LoadingScreen from "@/components/LoadingScreen";
 
 /** Minimalno koliko dugo ostaje preloader (ms) */
@@ -9,9 +9,12 @@ const MIN_LOAD_MS = 1100;
 const READY_DELAY_MS = 180;
 
 export default function Boot({ children }) {
+  useLayoutEffect(() => {
+    document.documentElement.classList.add("is-loading", "has-dom-set");
+  }, []);
+
   useEffect(() => {
     const root = document.documentElement;
-    root.classList.add("is-loading");
 
     const onReady = () => {
       window.setTimeout(() => {
@@ -31,8 +34,6 @@ export default function Boot({ children }) {
       const wait = Math.max(0, MIN_LOAD_MS - elapsed);
       window.setTimeout(onReady, wait);
     };
-
-    root.classList.add("has-dom-set");
 
     if (document.readyState === "complete") {
       finish();

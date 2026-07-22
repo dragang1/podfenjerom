@@ -7,6 +7,7 @@ export default function robots() {
     rules: {
       userAgent: "*",
       allow: "/",
+      disallow: ["/dobrodosli"],
     },
     sitemap: `${siteUrl}/sitemap.xml`,
     host: siteUrl,

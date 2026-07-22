@@ -1,5 +1,4 @@
 import { Bricolage_Grotesque, Fraunces, IBM_Plex_Mono } from "next/font/google";
-import Boot from "@/components/Boot";
 import "./globals.css";
 
 const display = Fraunces({
@@ -132,14 +131,14 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="sr"
-      className={`is-loading ${display.variable} ${sans.variable} ${mono.variable}`}
+      className={`${display.variable} ${sans.variable} ${mono.variable}`}
     >
       <body>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <Boot>{children}</Boot>
+        {children}
       </body>
     </html>
   );

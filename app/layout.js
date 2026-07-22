@@ -1,4 +1,5 @@
 import { Bricolage_Grotesque, Fraunces, IBM_Plex_Mono } from "next/font/google";
+import Boot from "@/components/Boot";
 import "./globals.css";
 
 const display = Fraunces({
@@ -100,7 +101,7 @@ const jsonLd = {
   priceRange: "$$",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "put M-16",
+    streetAddress: "Banjalučki put",
     addressLocality: "Nova Topola",
     addressRegion: "Gradiška",
     addressCountry: "BA",
@@ -138,7 +139,7 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {children}
+        <Boot>{children}</Boot>
       </body>
     </html>
   );

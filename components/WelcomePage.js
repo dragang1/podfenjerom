@@ -20,6 +20,7 @@ export default function WelcomePage({ brand }) {
     <main className="welcome">
       <div className="welcome_inner">
         <header className="welcome_brand">
+          <h1 className="welcome_headline">{welcome.headline}</h1>
           <Image
             src={brand.logo || "/fenjerlogo.png"}
             alt=""
@@ -30,7 +31,6 @@ export default function WelcomePage({ brand }) {
           />
           <p className="welcome_name">{brand.name}</p>
           <p className="welcome_location">{welcome.locationLine}</p>
-          <h1 className="welcome_headline">{welcome.headline}</h1>
         </header>
 
         <nav className="welcome_actions" aria-label="Brze akcije">

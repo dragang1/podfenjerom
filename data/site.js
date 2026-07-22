@@ -1,6 +1,6 @@
 export const site = {
   name: "Pod fenjerom",
-  location: "Nova Topola, put M-16, Gradiška, Republika Srpska",
+  location: "Banjalučki put, Nova Topola-Gradiška",
   phone: "",
   hours: "Svakim danom 7–23",
   mapEmbedUrl:
@@ -11,8 +11,8 @@ export const site = {
     "https://search.google.com/local/writereview?placeid=ChIJ0a4sJt73XUcR847fGvk4NLc",
   logo: "/fenjerlogo.png",
   welcome: {
-    headline: "Dobro došli u Pod Fenjerom",
-    locationLine: "Nova Topola · Gradiška",
+    headline: "Dobro došli",
+    locationLine: "Nova Topola",
     actions: [
       {
         id: "menu",

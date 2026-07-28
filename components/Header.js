@@ -18,7 +18,6 @@ const NAV_LINKS = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     document.documentElement.classList.toggle("nav-open", open);
@@ -28,11 +27,13 @@ export default function Header() {
   }, [open]);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    if (!open) return;
+    function onKey(e) {
+      if (e.key === "Escape") setOpen(false);
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
 
   function closeMenu() {
     setOpen(false);
@@ -52,9 +53,7 @@ export default function Header() {
   }
 
   return (
-    <header
-      className={`site-header${open ? " is-open" : ""}${scrolled ? " is-scrolled" : ""}`}
-    >
+    <header className={`site-header${open ? " is-open" : ""}`}>
       <div className="header-bar">
         <div className="header-brand-row">
           <Link

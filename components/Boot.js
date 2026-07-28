@@ -10,7 +10,7 @@ const READY_DELAY_MS = 180;
 
 export default function Boot({ children }) {
   useLayoutEffect(() => {
-    document.documentElement.classList.add("is-loading", "has-dom-set");
+    document.documentElement.classList.add("is-loading");
   }, []);
 
   useEffect(() => {
@@ -20,10 +20,6 @@ export default function Boot({ children }) {
       window.setTimeout(() => {
         root.classList.add("has-dom-ready");
         root.classList.remove("is-loading");
-
-        window.setTimeout(() => {
-          root.classList.remove("has-dom-set");
-        }, 5000);
       }, READY_DELAY_MS);
     };
 
@@ -43,7 +39,7 @@ export default function Boot({ children }) {
 
     return () => {
       window.removeEventListener("load", finish);
-      root.classList.remove("is-loading", "has-dom-set", "has-dom-ready");
+      root.classList.remove("is-loading", "has-dom-ready");
     };
   }, []);
 

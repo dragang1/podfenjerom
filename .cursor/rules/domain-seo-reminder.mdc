@@ -1,0 +1,13 @@
+---
+description: Reminder — set NEXT_PUBLIC_SITE_URL when custom domain is ready (SEO / OG)
+alwaysApply: true
+---
+
+# Domain reminder (Pod fenjerom)
+
+Kad korisnik spomene **domen**, **custom domain**, **Vercel domain** ili produkcijski URL:
+
+1. Podsjeti ga da u Vercel → Project → Settings → Environment Variables doda:
+   `NEXT_PUBLIC_SITE_URL=https://njegov-domen.com`
+2. Redeploy nakon dodavanja (da SEO, Open Graph, sitemap i JSON-LD koriste pravi host).
+3. Trenutni fallback u kodu: `https://podfenjerom.vercel.app` (`app/layout.js`, `app/robots.js`, `app/sitemap.js`).

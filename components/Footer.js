@@ -66,7 +66,6 @@ export default function Footer() {
         <div className="site-footer_grid">
           <div className="site-footer_col">
             <p className="site-footer_label">Kontakt</p>
-            <p>{site.location}</p>
             {site.phone ? (
               <p>
                 <a href={phoneHref}>{site.phone}</a>

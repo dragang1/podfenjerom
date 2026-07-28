@@ -1,7 +1,6 @@
 export const site = {
   name: "Pod fenjerom",
-  location: "Banjalučki put, Nova Topola-Gradiška",
-  phone: "",
+  phone: "+387 65 224 429",
   hours: "Svakim danom 7–23",
   mapEmbedUrl:
     "https://maps.google.com/maps?q=45.0548117,17.3084218&z=16&hl=sr&output=embed",

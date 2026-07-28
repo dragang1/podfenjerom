@@ -127,12 +127,7 @@ html.has-dom-ready .site-header {
   padding-top: calc(0.4rem + env(safe-area-inset-top, 0px));
   background: var(--lf-night);
   border-bottom: 1px solid rgba(184, 146, 74, 0.32);
-  transition: background 0.35s ease, border-color 0.35s ease;
-}
-
-.site-header.is-scrolled .header-bar {
-  background: var(--lf-soot);
-  border-bottom-color: rgba(184, 146, 74, 0.42);
+  color-scheme: dark;
 }
 
 .header-brand-row {
@@ -163,7 +158,9 @@ html.has-dom-ready .site-header {
   width: 7rem;
   height: 7rem;
   object-fit: contain;
-  filter: brightness(0) invert(1) sepia(0.32) saturate(0.5) hue-rotate(6deg);
+  /* Crni PNG → svijetli linen; bez sepia (slabiji kontrast na dark mode / niskom brightnessu) */
+  filter: brightness(0) invert(1);
+  opacity: 0.94;
 }
 
 .nav-desktop {
@@ -449,7 +446,8 @@ html.has-dom-ready .c-loading {
   width: 100%;
   height: auto;
   object-fit: contain;
-  filter: brightness(0) invert(1) sepia(0.32) saturate(0.5) hue-rotate(6deg);
+  filter: brightness(0) invert(1);
+  opacity: 0.94;
 }
 
 @keyframes lantern-pulse {
@@ -482,11 +480,28 @@ html.has-dom-ready .c-loading {
   z-index: 0;
 }
 
+.block-hero_video,
 .block-hero_photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center center;
+}
+
+.block-hero_video {
+  filter: saturate(1.02) brightness(0.68);
+  transform: scale(1.02);
+}
+
+.block-hero_photo {
   filter: blur(2.5px) saturate(1.02) brightness(0.62);
   transform: scale(1.04);
+}
+
+.block-hero_photo--fallback {
+  display: none;
 }
 
 .block-hero_scrim {
@@ -778,7 +793,6 @@ html.has-dom-ready .block-hero_title::after {
 }
 
 .block-menu_head {
-  position: static;
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
@@ -871,10 +885,6 @@ html.has-dom-ready .block-hero_title::after {
   line-height: 1.3;
 }
 
-.block-menu_name::after {
-  display: none;
-}
-
 .block-menu_price {
   font-family: var(--font-mono), ui-monospace, monospace;
   font-weight: 500;
@@ -882,6 +892,36 @@ html.has-dom-ready .block-hero_title::after {
   color: var(--lf-ember);
   letter-spacing: 0.02em;
   white-space: nowrap;
+}
+
+.block-menu_toggle-wrap {
+  display: flex;
+  justify-content: center;
+  padding-top: 0.35rem;
+}
+
+.block-menu_toggle {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--lf-night);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--lf-flame);
+  cursor: pointer;
+  transition: color 0.25s ease, border-color 0.25s ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.block-menu_toggle:hover,
+.block-menu_toggle:active {
+  color: var(--lf-ember);
+  border-bottom-color: var(--lf-ember);
 }
 
 @media (min-width: 1100px) {
@@ -1083,7 +1123,8 @@ html.has-dom-ready .block-hero_title::after {
   height: 3.75rem;
   object-fit: contain;
   flex-shrink: 0;
-  filter: brightness(0) invert(1) sepia(0.32) saturate(0.5) hue-rotate(6deg);
+  filter: brightness(0) invert(1);
+  opacity: 0.94;
 }
 
 .site-footer_name {
@@ -1266,7 +1307,8 @@ html.has-dom-ready .block-hero_title::after {
   height: var(--welcome-logo);
   object-fit: contain;
   margin: 0.25rem 0 0.15rem;
-  filter: brightness(0) invert(1) sepia(0.32) saturate(0.5) hue-rotate(6deg);
+  filter: brightness(0) invert(1);
+  opacity: 0.94;
 }
 
 .welcome_name {
@@ -1628,6 +1670,10 @@ html.has-dom-ready .block-hero_title::after {
     min-height: 100dvh;
   }
 
+  .block-hero_video {
+    filter: saturate(1.02) brightness(0.65);
+  }
+
   .block-hero_photo {
     filter: blur(2px) saturate(1.02) brightness(0.6);
   }
@@ -1677,8 +1723,17 @@ html.has-dom-ready .block-hero_title::after {
   }
 
   .block-hero_photo,
+  .block-hero_video,
   .block-gallery_photo {
     transform: none !important;
+  }
+
+  .block-hero_video {
+    display: none !important;
+  }
+
+  .block-hero_photo--fallback {
+    display: block !important;
   }
 
   .block-hero_photo {

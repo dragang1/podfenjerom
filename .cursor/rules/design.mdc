@@ -1,0 +1,57 @@
+---
+description: Design system — Pod fenjerom (orah / mjed / vino)
+alwaysApply: true
+---
+
+# Design differentiation
+
+## Preloader
+
+- `Boot.js`, `LoadingScreen.js`, `.c-loading`
+- Crni full-screen `--lf-soot` + logo
+- Stanja: `is-loading` → `has-dom-ready`
+
+## Archetype: stari restoran
+
+Orah, mjed, bjelokost, vino. Tipografski hero. Foto-forward u ostatku scrolla.
+
+Scroll: hero → istorija → specijalitet → jelovnik → anegdota → galerija → footer.
+
+## Paleta — „Orah & mjed“
+
+| Token | Hex | Uloga |
+|-------|-----|--------|
+| `--lf-soot` | `#161210` | najdublja pozadina |
+| `--lf-night` | `#2a1f1a` | orah / tamni panel |
+| `--lf-dusk` | `#3a2c24` | srednje drvo |
+| `--lf-linen` | `#f2ebe2` | bjelokost / svijetli tekst |
+| `--lf-plaster` | `#ebe3d6` | meni papir |
+| `--lf-flame` | `#b8924a` | stara mjed |
+| `--lf-flame-soft` | `#d4b36a` | mekša mjed |
+| `--lf-ember` | `#6b322c` | vino / oxblood (rijetko) |
+| `--lf-ink` | `#1a1512` | body tekst |
+| `--lf-mist` | `#9a8f82` | prigušeno |
+
+## Tipografija
+
+- **Fraunces** — hero i naslovi
+- **Bricolage Grotesque** — UI / body
+- **IBM Plex Mono** — mikro oznake
+
+## Hero
+
+- `lamb.avif` full-bleed + orah scrim
+- Centriran brand; jedan naslov, jedna rečenica, linijski CTA
+
+## NE
+
+- Cool navy / šumski zeleni paneli
+- Cream + terracotta AI šablon
+- Card / pill / glow / flourishes / brojevi / photo-code badgeovi
+- Fire.avif u heroju
+
+## OBAVEZNO
+
+- Flush layout, fotke iz `public/` u ostalim sekcijama
+- `prefers-reduced-motion`
+- Jedna zaključana paleta — orah & mjed

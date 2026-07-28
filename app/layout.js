@@ -6,20 +6,19 @@ const display = Fraunces({
   variable: "--font-display",
   subsets: ["latin"],
   style: ["normal", "italic"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600"],
 });
 
 const sans = Bricolage_Grotesque({
   variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600"],
 });
 
 const mono = IBM_Plex_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
+  weight: ["400", "500"],
 });
 
 const siteUrl =
@@ -27,8 +26,12 @@ const siteUrl =
   "https://podfenjerom.vercel.app";
 
 const title = "Pod fenjerom — Restoran Nova Topola, Gradiška";
+/** Meta description — zadržava SEO fraze za pretragu */
 const description =
   "Restoran Pod fenjerom u Novoj Topoli kod Gradiške. Jagnjetina sa ražnja od 1974. Restoran Gradiška, jagnjetina Gradiška, restoran Nova Topola.";
+/** Preview dijeljenja (OG / Twitter) — čitljiv, bez keyword liste */
+const shareDescription =
+  "Jagnjetina sa ražnja od 1974. Restoran Pod fenjerom, Nova Topola kod Gradiške.";
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
@@ -64,7 +67,7 @@ export const metadata = {
     url: "/",
     siteName: "Pod fenjerom",
     title,
-    description,
+    description: shareDescription,
     images: [
       {
         url: "/og.png",
@@ -77,7 +80,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title,
-    description,
+    description: shareDescription,
     images: ["/og.png"],
   },
   robots: {
@@ -97,6 +100,7 @@ const jsonLd = {
   description,
   image: [`${siteUrl}/fenjerlogo.png`, `${siteUrl}/og.png`],
   url: siteUrl,
+  telephone: "+38765224429",
   servesCuisine: ["Balkan", "Domaća kuhinja"],
   priceRange: "$$",
   address: {

@@ -23,7 +23,7 @@ export default function History() {
         <div className="block-history_columns">
           <RevealOnView type="slide-x" delay={80}>
             <p>
-              Smilja i Vukašin Stanišljević otvorili su restoran 1971. godine.
+              Smilja i Vukašin Stanišljević otvorili su restoran 1974. godine.
               Mali porodični posao u Novoj Topoli ubrzo je postao mjesto zbog
               kojeg se skretalo s puta.
             </p>

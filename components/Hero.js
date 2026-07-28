@@ -4,13 +4,27 @@ export default function Hero() {
   return (
     <section className="block-hero" aria-label="Početna">
       <div className="block-hero_media" aria-hidden="true">
+        <video
+          className="block-hero_video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster="/lamb.avif"
+        >
+          <source
+            src="/hero.mp4"
+            type="video/mp4"
+          />
+        </video>
         <Image
           src="/lamb.avif"
           alt=""
           fill
           priority
           sizes="100vw"
-          className="block-hero_photo"
+          className="block-hero_photo block-hero_photo--fallback"
         />
         <div className="block-hero_scrim" />
       </div>

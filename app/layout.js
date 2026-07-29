@@ -1,4 +1,5 @@
 import { Bricolage_Grotesque, Fraunces, IBM_Plex_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import Boot from "@/components/Boot";
 import "./globals.css";
 
@@ -144,6 +145,7 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <Boot>{children}</Boot>
+        <Analytics />
       </body>
     </html>
   );

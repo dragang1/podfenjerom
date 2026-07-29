@@ -1,10 +1,17 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { track } from "@vercel/analytics";
 
 function resolveActionHref(action, brand) {
   if (action.href) return action.href;
   if (!action.hrefKey) return "";
   return brand[action.hrefKey] || "";
+}
+
+function trackCta(id) {
+  track("welcome_cta", { id });
 }
 
 export default function WelcomePage({ brand }) {
@@ -36,6 +43,7 @@ export default function WelcomePage({ brand }) {
         <nav className="welcome_actions" aria-label="Brze akcije">
           {actions.map((action, index) => {
             const style = { "--welcome-delay": `${80 + index * 50}ms` };
+            const onClick = () => trackCta(action.id);
 
             if (action.external) {
               return (
@@ -46,6 +54,7 @@ export default function WelcomePage({ brand }) {
                   style={style}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={onClick}
                 >
                   {action.label}
                 </a>
@@ -58,6 +67,7 @@ export default function WelcomePage({ brand }) {
                 href={action.href}
                 className="welcome_btn"
                 style={style}
+                onClick={onClick}
               >
                 {action.label}
               </Link>

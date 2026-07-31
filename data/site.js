@@ -40,7 +40,7 @@ export const site = {
     ],
   },
   gallery: [
-    { src: "/gal-hrana-pecenje.jpg", alt: "Pečenje servirano na plati" },
+    { src: "/domacakafa.jpg", alt: "Domaća kafa" },
     { src: "/gal-hrana-pecenje-2.jpg", alt: "Pečenje na srebrnom pladnju" },
     { src: "/gal-hrana-mjesano.jpg", alt: "Miješano meso sa roštilja" },
     { src: "/gal-hrana-rostilj.jpg", alt: "Roštilj specijalitet na plati" },
@@ -129,7 +129,7 @@ export const site = {
         },
         { name: "Bečka šnicla (pomfrit)", price: "16 KM" },
         { name: "Pariška šnicla (pomfrit)", price: "16 KM" },
-        { name: "Pileća bečka šnicla (pomfrit)", price: "—" },
+        { name: "Pileća bečka šnicla (pomfrit)", price: "16 KM" },
         {
           name: "Biftek (pekarski krompir + grilovano povrće)",
           price: "35 KM",
@@ -176,7 +176,6 @@ export const site = {
         { name: "Grilovano povrće", price: "6 KM" },
         { name: "Pavlaka", price: "2 KM" },
         { name: "Ajvar", price: "2 KM" },
-        { name: "Pogačice", price: "—" },
       ],
     },
     {

@@ -637,16 +637,31 @@ html.has-dom-ready .block-hero_title::after {
 
 /* ---------- HISTORY ---------- */
 .block-history {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  background: var(--lf-soot);
+  color: var(--lf-linen);
+}
+
+.block-history_band {
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
   align-items: stretch;
   background: var(--lf-night);
-  color: var(--lf-linen);
+}
+
+.block-history_band--flip .block-history_photo {
+  order: 2;
+}
+
+.block-history_band--flip .block-history_copy {
+  order: 1;
 }
 
 .block-history_photo {
   position: relative;
-  min-height: clamp(26rem, 48vh, 38rem);
+  min-height: clamp(18rem, 42vh, 28rem);
   overflow: hidden;
   background: var(--lf-soot);
 }
@@ -656,6 +671,10 @@ html.has-dom-ready .block-hero_title::after {
 .block-specialty_plate-img,
 .block-gallery_photo {
   object-fit: cover;
+  /* override global img { max-width/height:auto } — fill mora puniti frame */
+  max-width: none;
+  width: 100%;
+  height: 100%;
 }
 
 .block-history_img {
@@ -666,9 +685,16 @@ html.has-dom-ready .block-hero_title::after {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: clamp(1.25rem, 2.5vw, 2rem);
+  gap: clamp(1.1rem, 2.2vw, 1.75rem);
   padding: clamp(2rem, 4.5vw, 3.5rem);
   background: var(--lf-night);
+}
+
+.block-history_lead {
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: rgba(242, 235, 226, 0.76);
+  max-width: 34rem;
 }
 
 .block-kicker {
@@ -696,18 +722,6 @@ html.has-dom-ready .block-hero_title::after {
   font-style: italic;
   font-weight: 400;
   color: var(--lf-flame-soft);
-}
-
-.block-history_columns {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.75rem 1.5rem;
-}
-
-.block-history_columns p {
-  font-size: 0.96rem;
-  line-height: 1.7;
-  color: rgba(242, 235, 226, 0.76);
 }
 
 .block-history_oath {
@@ -1597,8 +1611,31 @@ html.has-dom-ready .block-hero_title::after {
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 900px) {
-  .block-history {
+  .block-history,
+  .block-history_band,
+  .block-history_band--flip {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .block-history_band,
+  .block-history_band--flip {
     grid-template-columns: 1fr;
+  }
+
+  .block-history_band--flip .block-history_photo,
+  .block-history_band--flip .block-history_copy {
+    order: unset;
+  }
+
+  .block-history_photo {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* na mobitelu bez clip wipe-a koji može rezati kadar */
+  .block-history_photo.reveal--wipe {
+    clip-path: none;
   }
 
   .block-menu_chapters {
@@ -1645,12 +1682,13 @@ html.has-dom-ready .block-hero_title::after {
   }
 
   .block-history_photo {
-    min-height: 18rem;
-    aspect-ratio: auto;
+    min-height: clamp(14rem, 56vw, 22rem);
+    aspect-ratio: 4 / 3;
   }
 
-  .block-history_columns {
-    grid-template-columns: 1fr;
+  .block-history_img {
+    object-fit: cover;
+    object-position: center center;
   }
 
   .block-specialty_stage {

@@ -24,7 +24,7 @@ const mono = IBM_Plex_Mono({
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-  "https://podfenjerom.vercel.app";
+  "https://podfenjerom.com";
 
 const title = "Pod fenjerom — Restoran Nova Topola, Gradiška";
 /** Meta description — zadržava SEO fraze za pretragu */

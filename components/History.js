@@ -6,7 +6,7 @@ export default function History() {
     <section className="block-history" id="istorija">
       <RevealOnView type="wipe" className="block-history_photo">
         <Image
-          src="/interior.jpg"
+          src="/gal-interior.jpg"
           alt="Unutrašnjost restorana Pod fenjerom"
           fill
           sizes="(max-width: 900px) 100vw, 50vw"
@@ -30,9 +30,8 @@ export default function History() {
           </RevealOnView>
           <RevealOnView type="slide-x-right" delay={140}>
             <p>
-              Danas restoran vode njihov sin Predrag i supruga Divna.
-              Promijenile su se godine, ali ne i pravilo gost se dočekuje kao na
-              slavu.
+              Tradicija se nastavila. Promijenile su se godine, ali ne i pravilo —
+              gost se dočekuje kao na slavu.
             </p>
           </RevealOnView>
         </div>

@@ -1,7 +1,29 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import { site } from "@/data/site";
 
+/** Koliko slika se vidi dok je galerija zatvorena */
+const PREVIEW_COUNT = 6;
+
 export default function Gallery() {
+  const [open, setOpen] = useState(false);
+  const items = open ? site.gallery : site.gallery.slice(0, PREVIEW_COUNT);
+  const canToggle = site.gallery.length > PREVIEW_COUNT;
+
+  function toggle() {
+    if (open) {
+      setOpen(false);
+      const el = document.getElementById("galerija");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      return;
+    }
+    setOpen(true);
+  }
+
   return (
     <section className="block-gallery" id="galerija">
       <div className="block-gallery_head">
@@ -16,7 +38,7 @@ export default function Gallery() {
       </div>
 
       <div className="block-gallery_grid">
-        {site.gallery.map((item, index) => (
+        {items.map((item, index) => (
           <figure
             key={item.src}
             className={`block-gallery_frame block-gallery_frame--${index + 1}`}
@@ -31,6 +53,19 @@ export default function Gallery() {
           </figure>
         ))}
       </div>
+
+      {canToggle ? (
+        <div className="block-gallery_toggle-wrap">
+          <button
+            type="button"
+            className="block-gallery_toggle"
+            aria-expanded={open}
+            onClick={toggle}
+          >
+            {open ? "Prikaži manje" : "Vidi više"}
+          </button>
+        </div>
+      ) : null}
     </section>
   );
 }

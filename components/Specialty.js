@@ -6,8 +6,8 @@ export default function Specialty() {
     <section className="block-specialty" id="specijalitet">
       <div className="block-specialty_stage">
         <Image
-          src="/razanj.webp"
-          alt="Jagnjetina na ražnju nad vatrom"
+          src="/gal-razanj.jpg"
+          alt="Jagnjetina na ražnju"
           fill
           sizes="100vw"
           className="block-specialty_photo"
@@ -30,8 +30,8 @@ export default function Specialty() {
 
       <div className="block-specialty_plate">
         <Image
-          src="/jagnjetina.png"
-          alt="Jagnjetina servirana na stolu"
+          src="/gal-hrana-njeguski.jpg"
+          alt="Njeguški stek sa kajmakom"
           fill
           sizes="100vw"
           className="block-specialty_plate-img"

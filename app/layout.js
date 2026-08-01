@@ -27,9 +27,9 @@ const siteUrl =
   "https://podfenjerom.com";
 
 const title = "Pod fenjerom — Restoran Nova Topola, Gradiška";
-/** Meta description — zadržava SEO fraze za pretragu */
+/** Meta description — Nova Topola u fokusu; Gradiška za lokalnu pretragu */
 const description =
-  "Restoran Pod fenjerom u Novoj Topoli kod Gradiške. Jagnjetina sa ražnja od 1974. Restoran Gradiška, jagnjetina Gradiška, restoran Nova Topola.";
+  "Restoran Pod fenjerom u Novoj Topoli. Jagnjetina sa ražnja od 1974. Restoran Gradiška, restoran Gradiska, jagnjetina Gradiška, restoran Nova Topola.";
 /** Preview dijeljenja (OG / Twitter) — čitljiv, bez keyword liste */
 const shareDescription =
   "Jagnjetina sa ražnja od 1974. Restoran Pod fenjerom, Nova Topola kod Gradiške.";
@@ -42,18 +42,22 @@ export const metadata = {
   },
   description,
   keywords: [
-    "restoran Gradiška",
-    "jagnjetina Gradiška",
     "restoran Nova Topola",
-    "jagnjetina Nova Topola",
     "Pod fenjerom",
     "restoran Pod fenjerom",
+    "restoran Gradiška",
+    "restoran Gradiska",
+    "Pod fenjerom Gradiška",
+    "jagnjetina Nova Topola",
+    "jagnjetina Gradiška",
+    "jagnjetina Gradiska",
     "jagnjetina sa ražnja",
     "jagnjetina na ražnju",
     "ražanj Gradiška",
-    "restoran Republika Srpska",
     "gdje jesti Gradiška",
+    "restoran Republika Srpska",
     "domaća kuhinja Nova Topola",
+    "domaća kuhinja Gradiška",
   ],
   authors: [{ name: "Pod fenjerom" }],
   creator: "Pod fenjerom",
@@ -98,11 +102,12 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Restaurant",
   name: "Pod fenjerom",
+  alternateName: ["Restoran Pod fenjerom", "Pod fenjerom Nova Topola"],
   description,
   image: [`${siteUrl}/fenjerlogo.png`, `${siteUrl}/og.png`],
   url: siteUrl,
-  telephone: "+38765224429",
-  servesCuisine: ["Balkan", "Domaća kuhinja"],
+  telephone: "+38751891391",
+  servesCuisine: ["Balkan", "Domaća kuhinja", "Jagnjetina sa ražnja"],
   priceRange: "$$",
   address: {
     "@type": "PostalAddress",
@@ -116,6 +121,11 @@ const jsonLd = {
     latitude: 45.0548117,
     longitude: 17.3084218,
   },
+  areaServed: [
+    { "@type": "City", name: "Nova Topola" },
+    { "@type": "City", name: "Gradiška" },
+  ],
+  hasMap: "https://www.google.com/maps?cid=13201239050278637299",
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
     dayOfWeek: [
